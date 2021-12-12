@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 		/* Child process*/
 		sleep(5);
 		kill(getppid(), SIGUSR1); // getppid --> to get th parent procces id.
-		// SIGUSR1 ---> 
+		// SIGUSR1 ---> send the signal SIGUSR1 to the parent proccess.
 	}
 	else
 	{
