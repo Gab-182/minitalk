@@ -9,7 +9,6 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 
-# include "./ft_printf/ft_printf.h"
 
 int		server();
 int		client(int pid);

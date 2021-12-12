@@ -12,7 +12,7 @@ int server()
     if (pid == 0)
     {
         // child proccess.
-        usleep(100);
+        sleep(1);
         sigemptyset(&sigset);
         printf("The server is letting client know he's ready for signal");
         kill(getpid(), SIGUSR1);
