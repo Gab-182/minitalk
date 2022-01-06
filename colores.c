@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   colores.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabdoush <gabdoush@42ABUDHABI.AE>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 13:27:24 by gabdoush          #+#    #+#             */
-/*   Updated: 2022/01/06 19:39:34 by gabdoush         ###   ########.fr       */
+/*   Created: 2022/01/06 17:00:32 by gabdoush          #+#    #+#             */
+/*   Updated: 2022/01/06 17:08:19 by gabdoush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int	main(void)
+/*************** Colours *****************/
+void    red()
 {
-	ft_putstr("The server's PID is: ");
-	green();
-	ft_putnbr(getpid());
-	reset();
-	ft_putstr("\n\nWaiting for the client message: \n\n");
+    ft_putstr("\033[1;31m");
 }
+
+void    orange()
+{
+    ft_putstr("\033[0;34m");
+}
+
+void    green()
+{
+    ft_putstr("\033[0;32m");
+}
+
+void    reset() 
+{
+    ft_putstr("\033[0m");
+}
+/*****************************************/
