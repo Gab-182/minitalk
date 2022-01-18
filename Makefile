@@ -1,40 +1,21 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: gabdoush <gabdoush@42ABUDHABI.AE>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/03 09:55:02 by gabdoush          #+#    #+#              #
-#    Updated: 2022/01/06 17:07:15 by gabdoush         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+SERVER_FILES = server.c minitalk_utils.c
+SERVER_OBJ = $(SERVER_FILES:.c=.o)
 
-NAME = minitalk.a
+CLIENT_FILES = client.c minitalk_utils.c
+CLIENT_OBJ = $(CLIENT_FILES:.c=.o)
 
-FILES =  server.c\
-		 client.c\
-		 minitalk_utils.c\
-		 colores.c
+all: SERVER CLIENT
 
-OBJECTS =	$(FILES:.c=.o)
+SERVER: $(SERVER_FILES)
+	gcc -Wall -Wextra -Werror -o server $(SERVER_FILES) minitalk.h
+CLIENT: $(CLIENT_FILES)
+	gcc -Wall -Wextra -Werror -o client $(CLIENT_FILES) minitalk.h
 
-HEADERS = minitalk.h 
+clean: 
+	rm -f $(SERVER_OBJ) $(CLIENT_OBJ)
 
-FLAGS = -Wall -Werror -Wextra
-
-CC = gcc -c $(FLAGS)
-
-all: $(NAME)
-
-$(NAME): $(OBJECTS)
-	ar rc $(NAME) $(OBJECTS)
-
-clean:
-	/bin/rm -f $(OBJECTS)
-
-fclean: clean
-	/bin/rm -f  $(NAME)
+fclean: 
+	rm -f server client
 
 re: fclean all
 
