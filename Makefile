@@ -1,20 +1,40 @@
-SERVER_FILES = server.c minitalk_utils.c
+Name = server
+Name2 = client
+
+SERVER_FILES = server.c \
+			   minitalk_utils.c
+
+CLIENT_FILES = client.c \
+			   minitalk_utils.c
+
 SERVER_OBJ = $(SERVER_FILES:.c=.o)
 
-CLIENT_FILES = client.c minitalk_utils.c
 CLIENT_OBJ = $(CLIENT_FILES:.c=.o)
 
-all: SERVER CLIENT
+INCLUDES = ./libft/libft.h \
+		   ./minitalk.h
 
-SERVER: $(SERVER_FILES)
-	gcc -Wall -Wextra -Werror -o server $(SERVER_FILES) minitalk.h
-CLIENT: $(CLIENT_FILES)
-	gcc -Wall -Wextra -Werror -o client $(CLIENT_FILES) minitalk.h
+LIBFT = ./libft/libft.a
 
-clean: 
+CFLAGS = -Wextra -Werror -Wall
+
+CC = gcc $(CFLAGS)
+
+all: $(Name) $(Name2)
+
+$(Name): $(SERVER_OBJ)
+	make -C ./libft
+	$(CC) $(SERVER_OBJ) $(INCLUDES) $(LIBFT) -o server
+
+$(Name2): $(CLIENT_OBJ)
+	$(CC) $(CLIENT_OBJ) $(INCLUDES) $(LIBFT) -o client
+
+clean:
+	make -C ./libft clean
 	rm -f $(SERVER_OBJ) $(CLIENT_OBJ)
 
-fclean: 
+fclean:
+	make -C ./libft fclean
 	rm -f server client
 
 re: fclean all
