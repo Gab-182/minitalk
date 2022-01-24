@@ -34,6 +34,12 @@ void    binery_converter(int pid, char *str, int len)
     }
 }
 
+void    handler(void)
+{
+    ft_putstr("Recived aproval from the server to start..");
+    ft_putchar('\n');
+}
+
 int main(int argc, char **argv) 
 {
     pid_t pid;
@@ -51,6 +57,7 @@ int main(int argc, char **argv)
 		ft_putstr("Error, PID is not valid\n");
         error();
     }
+    signal(SIGUSR1, handler);
     binery_converter(pid, argv[2], ft_strlen(argv[2]));
     return (EXIT_SUCCESS);
 }
