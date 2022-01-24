@@ -34,11 +34,11 @@ void    binery_converter(int pid, char *str, int len)
     }
 }
 
-void    handler(void)
-{
-    ft_putstr("Recived aproval from the server to start..");
-    ft_putchar('\n');
-}
+// void    handler(void)
+// {
+//     ft_putstr("Recived aproval from the server to start..");
+//     ft_putchar('\n');
+// }
 
 int main(int argc, char **argv) 
 {
