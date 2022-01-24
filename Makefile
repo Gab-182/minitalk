@@ -40,7 +40,7 @@ clean:
 
 fclean: clean
 	make -C ./libft fclean
-	@echo "\033[0m       \033[0;33m fcleaning minitalk excutable files...\033[0m" $< 
+	@echo "\033[0m       \033[0;33m fcleaning minitalk excutable files...\033[0m" $<
 	rm -f server client
 
 re: fclean all
