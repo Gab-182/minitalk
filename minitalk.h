@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minitalk.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gabdoush <gabdoush@42ABUDHABI.AE>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/24 14:35:03 by gabdoush          #+#    #+#             */
+/*   Updated: 2022/01/24 16:13:45 by gabdoush         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MINITALK_H
 # define MINITALK_H
 
@@ -20,6 +32,6 @@ void	red(void);
 void	green(void);
 void	yellow(void);
 void	reset(void);
-void	error(void);
+void	error(int i);
 
 #endif

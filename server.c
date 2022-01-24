@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   server.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gabdoush <gabdoush@42ABUDHABI.AE>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/24 14:34:52 by gabdoush          #+#    #+#             */
+/*   Updated: 2022/01/24 16:13:51 by gabdoush         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minitalk.h"
 
 void	give_id(void)
@@ -8,20 +20,25 @@ void	give_id(void)
 	if (id < 0)
 	{
 		red();
-		printf("Failed to give ID to the server.\n");
-		error();
+		ft_putstr("Error, Failed to give ID to the server.");
+		error(1);
 	}
-	printf("Server PID is :\n");
+	ft_putstr("Server PID is : ");
 	yellow();
-	printf("%d\n", id);
+	ft_putnbr(id);
+	ft_putchar('\n');
 	reset();
 }
 
-void	free_bin(char *bin, int i)
+char	if_statements(int c)
 {
-	i = 0;
-	free(bin);
-	bin = NULL;
+	char	b;
+
+	if (c == SIGUSR1)
+		b = '1';
+	if (c == SIGUSR2)
+		b = '0';
+	return (b);
 }
 
 void	handler(int c)
@@ -35,10 +52,7 @@ void	handler(int c)
 		bin = (char *)malloc(1);
 		i = 0;
 	}
-	if (c == SIGUSR1)
-		b = '1';
-	if (c == SIGUSR2)
-		b = '0';
+	b = if_statements(c);
 	i++;
 	if (i <= 8)
 	{
@@ -47,7 +61,11 @@ void	handler(int c)
 			bin_to_char(bin);
 	}
 	if (i > 7)
-		free_bin(bin, i);
+	{
+		i = 0;
+		free(bin);
+		bin = NULL;
+	}
 }
 
 int	main(void)
