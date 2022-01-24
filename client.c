@@ -6,7 +6,7 @@
 /*   By: gabdoush <gabdoush@42ABUDHABI.AE>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:34:48 by gabdoush          #+#    #+#             */
-/*   Updated: 2022/01/24 16:07:15 by gabdoush         ###   ########.fr       */
+/*   Updated: 2022/01/24 16:41:05 by gabdoush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,11 @@ int	main(int argc, char **argv)
 	pid = ft_atoi(argv[1]);
 	if (argc < 3 || argc > 3)
 	{
-		red();
 		ft_putstr("Error, Usage: ./client <server PID> <string>");
 		error(1);
 	}
 	if (pid > 2147483647 || pid <= 0)
 	{
-		red();
 		ft_putstr("Error, PID is not valid, ");
 		error(1);
 	}

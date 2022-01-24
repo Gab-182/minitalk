@@ -6,7 +6,7 @@
 #    By: gabdoush <gabdoush@42ABUDHABI.AE>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 14:35:11 by gabdoush          #+#    #+#              #
-#    Updated: 2022/01/24 16:01:49 by gabdoush         ###   ########.fr        #
+#    Updated: 2022/01/24 16:40:10 by gabdoush         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ Name = server
 Name2 = client
 
 SERVER_FILES = server.c \
-			   minitalk_utils.c
+			   error_handle.c
 
 CLIENT_FILES = client.c \
-			   minitalk_utils.c
+			   error_handle.c
 
 SERVER_OBJ = $(SERVER_FILES:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: gabdoush <gabdoush@42ABUDHABI.AE>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:34:52 by gabdoush          #+#    #+#             */
-/*   Updated: 2022/01/24 16:13:51 by gabdoush         ###   ########.fr       */
+/*   Updated: 2022/01/24 16:40:41 by gabdoush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,12 @@ void	give_id(void)
 	id = getpid();
 	if (id < 0)
 	{
-		red();
 		ft_putstr("Error, Failed to give ID to the server.");
 		error(1);
 	}
 	ft_putstr("Server PID is : ");
-	yellow();
 	ft_putnbr(id);
 	ft_putchar('\n');
-	reset();
 }
 
 char	if_statements(int c)

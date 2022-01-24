@@ -6,7 +6,7 @@
 /*   By: gabdoush <gabdoush@42ABUDHABI.AE>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:35:03 by gabdoush          #+#    #+#             */
-/*   Updated: 2022/01/24 16:13:45 by gabdoush         ###   ########.fr       */
+/*   Updated: 2022/01/24 16:38:54 by gabdoush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,6 @@ int		ft_atoi(const char *str);
 void	ft_putchar(int c);
 void	ft_putstr(char *str);
 void	ft_putnbr(int num);
-void	red(void);
-void	green(void);
-void	yellow(void);
-void	reset(void);
 void	error(int i);
 
 #endif
