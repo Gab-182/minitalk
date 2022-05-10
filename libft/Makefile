@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gabdoush <gabdoush@42ABUDHABI.AE>          +#+  +:+       +#+         #
+#    By: gabdoush <gabdoush@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 14:35:54 by gabdoush          #+#    #+#              #
-#    Updated: 2022/01/24 14:35:55 by gabdoush         ###   ########.fr        #
+#    Updated: 2022/05/10 15:25:54 by gabdoush         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,7 @@ FILES =  ft_atoi\
 	 ft_putchar\
 	 ft_putstr\
 	 ft_putnbr\
-	 ft_strjoin\
-	 bin_to_char\
-	 ft_strlen
+	 ft_strlen\
 
 OBJECTS =	$(FILES:.c=.o)
 

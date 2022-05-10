@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabdoush <gabdoush@42ABUDHABI.AE>          +#+  +:+       +#+        */
+/*   By: gabdoush <gabdoush@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:35:47 by gabdoush          #+#    #+#             */
-/*   Updated: 2022/01/24 14:35:48 by gabdoush         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:26:02 by gabdoush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@
 # include <unistd.h>
 
 int				ft_atoi(const char *str);
-char			*ft_strjoin(char *s1, char s2);
 void			ft_putchar(int c);
 void			ft_putstr(char *s);
 void			ft_putnbr(int n);
-void			bin_to_char(char *bin);
 size_t			ft_strlen(char *s);
 
 #endif

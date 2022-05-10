@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabdoush <gabdoush@42ABUDHABI.AE>          +#+  +:+       +#+        */
+/*   By: gabdoush <gabdoush@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:34:52 by gabdoush          #+#    #+#             */
-/*   Updated: 2022/01/24 16:40:41 by gabdoush         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:56:55 by gabdoush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
+/*----------------------------------------------------------------------------*/
 void	give_id(void)
 {
 	pid_t	id;
@@ -27,41 +28,20 @@ void	give_id(void)
 	ft_putchar('\n');
 }
 
-char	if_statements(int c)
-{
-	char	b;
-
-	if (c == SIGUSR1)
-		b = '1';
-	if (c == SIGUSR2)
-		b = '0';
-	return (b);
-}
-
+/*----------------------------------------------------------------------------*/
 void	handler(int c)
 {
-	char		b;
-	static int	i;
-	static char	*bin;
+	static int	letter;
+	static int	i = 7;
 
-	if (!bin)
+	if (c == SIGUSR1)
+		letter |= (1 << i);
+	i--;
+	if (i == -1)
 	{
-		bin = (char *)malloc(1);
-		i = 0;
-	}
-	b = if_statements(c);
-	i++;
-	if (i <= 8)
-	{
-		bin = ft_strjoin(bin, b);
-		if (i == 8)
-			bin_to_char(bin);
-	}
-	if (i > 7)
-	{
-		i = 0;
-		free(bin);
-		bin = NULL;
+		ft_putchar(letter);
+		i = 7;
+		letter = 0;
 	}
 }
 
@@ -76,3 +56,5 @@ int	main(void)
 	}
 	return (EXIT_SUCCESS);
 }
+
+/*----------------------------------------------------------------------------*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabdoush <gabdoush@42ABUDHABI.AE>          +#+  +:+       +#+        */
+/*   By: gabdoush <gabdoush@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:34:48 by gabdoush          #+#    #+#             */
-/*   Updated: 2022/01/24 16:41:05 by gabdoush         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:53:08 by gabdoush         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,30 @@ void	binery_converter(int pid, char *str, int len)
 					error(2);
 			}
 			bin--;
-			usleep(100);
+			usleep(400);
 		}
 		i++;
 	}
 }
 
+/*----------------------------------------------------------------------------*/
 int	main(int argc, char **argv)
 {
 	pid_t	pid;
 
-	pid = ft_atoi(argv[1]);
-	if (argc < 3 || argc > 3)
+	if (argc != 3)
 	{
-		ft_putstr("Error, Usage: ./client <server PID> <string>");
+		ft_putstr("Error, Wrong arguments!!");
 		error(1);
 	}
+	pid = ft_atoi(argv[1]);
 	if (pid > 2147483647 || pid <= 0)
 	{
-		ft_putstr("Error, PID is not valid, ");
+		ft_putstr("Error, Wrong PID!!!");
 		error(1);
 	}
 	binery_converter(pid, argv[2], ft_strlen(argv[2]));
 	return (EXIT_SUCCESS);
 }
+
+/*----------------------------------------------------------------------------*/
